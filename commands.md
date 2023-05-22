@@ -6,6 +6,7 @@
 2. [Producer](#producer)
 3. [Consumer](#consumer)
 4. [Consumer Groups](#consumer-groups)
+5. [KRaft](#kraft)
 
 ## Topics
 
@@ -118,3 +119,17 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --delete --group <CON
 ```
 
 **NOTE:** You can’t delete a consumer group when it is active
+
+## KRaft
+
+To describe the KRaft `meta.properties`
+
+```bash
+kafka-metadata-quorum.sh --bootstrap-server localhost:9092 describe --status
+```
+
+To dump the log file for debugging
+
+```bash
+kafka-dump-log.sh --cluster-metadata-decoder --files <PATH_TO_LOG>
+```
